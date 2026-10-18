@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ExcelStep, laboratorium belajar Microsoft Excel langkah demi langkah.">
+  <title>ExcelStep | Laboratorium Belajar Excel</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#beranda" data-page="beranda">
+      <span class="logo">X</span>
+      <span>Excel<span class="blue">Step</span>
+        <small>Laboratorium belajar interaktif</small>
+      </span>
+    </a>
+
+    <button id="menuToggle" class="menu-toggle"
+      aria-label="Buka navigasi" aria-expanded="false">☰</button>
+
+    <nav id="navigation">
+      <a href="#beranda" data-page="beranda">Beranda</a>
+      <a href="#modul" data-page="modul">Modul Belajar</a>
+      <a href="#evaluasi" data-page="evaluasi">Evaluasi</a>
+      <a href="#tentang" data-page="tentang">Tentang</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb" id="breadcrumb">Beranda</div>
+
+    <section class="page active" id="beranda">
+      <div class="hero">
+        <span class="eyebrow">MEDIA PEMBELAJARAN INFORMATIKA</span>
+        <h1>Dari belum mengenal Excel sampai mampu mengolah data.</h1>
+        <p>
+          Belajar melalui modul, ikuti setiap langkah praktik, coba sendiri
+          di Microsoft Excel, lalu periksa hasil pekerjaanmu.
+        </p>
+        <button class="btn primary" data-go="modul">Mulai Belajar →</button>
+        <div class="hero-stats">
+          <div><strong>6</strong><span>Modul belajar</span></div>
+          <div><strong>Step-by-step</strong><span>Panduan praktik</span></div>
+          <div><strong>Mandiri</strong><span>Latihan dan evaluasi</span></div>
+        </div>
+        <div class="hero-visual" aria-label="Ilustrasi petualangan belajar Excel">
+          <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+          <div class="hero-planet">📊</div>
+          <span class="hero-float float-fx">ƒx</span><span class="hero-float float-grid">▦</span>
+          <span class="hero-float float-star">✦</span><span class="hero-float float-check">✓</span>
+          <div class="hero-caption">EXCEL QUEST <span>★ ★ ★</span></div>
+        </div>
+      </div>
+
+      <div class="section-title">
+        <div>
+          <span class="eyebrow">JALUR PEMBELAJARAN</span>
+          <h2>Belajar secara bertahap</h2>
+        </div>
+        <p>Selesaikan latihan dan lanjutkan ke keterampilan berikutnya.</p>
+      </div>
+
+      <div id="homeModules" class="module-grid"></div>
+
+      <div class="notice">
+        <strong>Siapkan sebelum mulai:</strong>
+        komputer dengan Microsoft Excel, browser untuk membuka ExcelStep,
+        dan buku catatan jika diperlukan. Gunakan data latihan fiktif, bukan
+        data pribadi teman sekelas.
+      </div>
+    </section>
+
+    <section class="page" id="modul">
+      <div class="section-title">
+        <div>
+          <span class="eyebrow">PUSAT PEMBELAJARAN</span>
+          <h1>Modul Belajar</h1>
+        </div>
+      </div>
+
+      <div class="progress-panel">
+        <div>
+          <strong>Progres belajarmu</strong>
+          <p id="progressText">0 dari 6 modul selesai.</p>
+        </div>
+        <div class="progress-track">
+          <div id="progressBar"></div>
+        </div>
+      </div>
+
+      <div id="moduleGrid" class="module-grid"></div>
+    </section>
+
+    <section class="page" id="belajar">
+      <button class="text-button" data-go="modul">← Kembali ke daftar modul</button>
+
+      <div id="lessonHeader" class="lesson-header"></div>
+
+      <div class="lesson-layout">
+        <aside class="step-sidebar">
+          <strong>Langkah pembelajaran</strong>
+          <div id="stepList"></div>
+        </aside>
+
+        <article class="lesson-card">
+          <div class="step-meta">
+            <span id="stepCounter" class="tag"></span>
+            <span id="stepDuration" class="muted"></span>
+          </div>
+
+          <h2 id="stepTitle"></h2>
+          <p id="stepIntro"></p>
+
+          <div id="stepContent" class="step-content"></div>
+
+          <div id="practiceArea"></div>
+
+          <div id="stepCheck" class="step-check">
+            <label>
+              <input type="checkbox" id="understood">
+              Saya sudah melakukan langkah ini di Microsoft Excel.
+            </label>
+          </div>
+
+          <div id="stepFeedback" class="feedback" aria-live="polite"></div>
+
+          <div class="lesson-actions">
+            <button class="btn secondary" id="prevStep">← Sebelumnya</button>
+            <button class="btn primary" id="nextStep">Langkah berikutnya →</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="page" id="evaluasi">
+      <div class="page-heading">
+        <span class="eyebrow">UJI PEMAHAMAN</span>
+        <h1>Evaluasi Pembelajaran</h1>
+        <p>
+          Evaluasi digunakan untuk memeriksa pemahaman awal terhadap
+          konsep Excel. Praktik langsung tetap diperlukan untuk menilai
+          keterampilan menggunakan aplikasi.
+        </p>
+      </div>
+
+      <div class="lesson-card">
+        <h2>Kuis pengetahuan dasar</h2>
+        <p>Kerjakan kuis setelah mempelajari modul-modul yang relevan.</p>
+        <button class="btn primary" id="startFinalQuiz">Mulai evaluasi →</button>
+        <div id="finalQuizArea"></div>
+      </div>
+    </section>
+
+    <section class="page" id="tentang">
+      <div class="page-heading">
+        <span class="eyebrow">TENTANG MEDIA</span>
+        <h1>ExcelStep</h1>
+        <p>Media pembelajaran berbasis web sebagai pendamping praktik Microsoft Excel.</p>
+      </div>
+      <div class="lesson-card">
+        <h2>Tujuan pengembangan</h2>
+        <p>
+          Membantu siswa mempelajari keterampilan Excel melalui materi
+          yang terstruktur, langkah praktik yang dapat diulang, contoh
+          pekerjaan, dan evaluasi formatif.
+        </p>
+        <h2>Sasaran</h2>
+        <p>Siswa kelas X, khususnya kelas XE1 SMA Negeri 1 Kartasura.</p>
+        <h2>Pengembang</h2>
+        <p>Nama: [Isi nama mahasiswa]</p>
+        <p>NIM: [Isi NIM]</p>
+        <div class="notice">
+          Materi ini merupakan rancangan prototipe. Urutan dan isi akhir
+          perlu dikonfirmasi dengan guru Informatika sebelum diterapkan.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>ExcelStep</strong>
+    <p>Belajar Excel, satu langkah pada satu waktu.</p>
+  </footer>
+</body>
+</html>
